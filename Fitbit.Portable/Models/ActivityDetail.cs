@@ -23,6 +23,8 @@ namespace Fitbit.Api.Portable.Models
 
 		public string DistanceUnit { get; set; }
 
+		public decimal Speed { get; set; }
+
 		public Uri HeartRateLink { get; set; }
 
 		public HeartRateZone[] HeartRateZones { get; set; }
