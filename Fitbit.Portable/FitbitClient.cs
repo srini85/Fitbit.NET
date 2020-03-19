@@ -485,6 +485,13 @@ namespace Fitbit.Api.Portable
             return serializer.Deserialize<UserProfile>(responseBody);    
         }
 
+        public async Task<string> GetTcxData(string tcxLink)
+        {
+	        HttpResponseMessage response = await HttpClient.GetAsync(tcxLink);
+	        await HandleResponse(response);
+	        return await response.Content.ReadAsStringAsync();
+        }
+
         /// <summary>
         /// Requests the specified <see cref="TimeSeriesResourceType"/> for the date range and user specified
         /// </summary>
