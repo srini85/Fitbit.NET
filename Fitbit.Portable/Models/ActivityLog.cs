@@ -1,4 +1,7 @@
-﻿namespace Fitbit.Models
+﻿using System;
+using Newtonsoft.Json;
+
+namespace Fitbit.Models
 {
     /*
     <activityId>51007</activityId>
@@ -29,5 +32,9 @@
         public string Name { get; set; }
         public string StartTime { get; set; }
         public int Steps { get; set; }
+        public string StartDate { get; set; }
+        public string ActivityParentName { get; set; }
+        [JsonProperty(PropertyName = "lastModified")]
+        public DateTimeOffset LastModified { get; set; }
     }
 }

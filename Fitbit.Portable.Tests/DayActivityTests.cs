@@ -164,8 +164,13 @@ namespace Fitbit.Portable.Tests
             Assert.AreEqual("Running (jogging), 6.7 mph (9 min mile) (MyFitnessPal)", a.Name);
             // startdate
             Assert.AreEqual("20:16", a.StartTime); // todo: change this to date time as per FatLog and WeightLog
-            // steps?
-            
+            // startDate 
+            Assert.AreEqual("2014-09-25", a.StartDate);
+            // activityParentName
+            Assert.AreEqual("Running (jogging), 6.7 mph (9 min mile) (MyFitnessPal)", a.ActivityParentName);
+            // lastModified
+            Assert.AreEqual(new DateTimeOffset(2014, 09, 25, 20, 57, 46, new TimeSpan(1, 0, 0)), a.LastModified);
+
             // goals
             var g = activity.Goals;
             ValidateActivityGoals(g);
